@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<title>Conteúdo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="css/portugol-studio-light.css">
+
+  <style>
+    pre>code {
+      font-family: "Source Code Pro", "Consolas", "Courier", monospace;
+    }
+  </style>
+
+  <script src="js/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+<div class="menul">
+	<ul class="menu">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="sobre.html">Sobre</a></li>
+		<li><a href="desenvolvedores.html">Desenvolvedores</a></li> 
+		<li><a href="conteudos.html">Conteúdos</a></li>               
+	</ul>
+</div>
+<button class="accordion">Matrizes</button>
+<div class="panel">
+  <h3>Matriz de ordem 3</h3>
+  <p>Dada a matriz de ordem 3, B =<img src="https://mundoeducacao.bol.uol.com.br/upload/conteudo/determinante%20mundo4.JPG"> o valor numérico do seu determinante é calculado da seguinte forma:</p>
+  <p>Primeiro representamos essa matriz em forma de determinante e repetimos as duas primeiras colunas.</p>
+  <p><img src="https://mundoeducacao.bol.uol.com.br/upload/conteudo/determinante%20mundo5.JPG"></p>
+  <p>Depois calculamos os produtos das diagonais principais e os produtos das diagonais secundárias.</p>
+  <p><img src="https://mundoeducacao.bol.uol.com.br/upload/conteudo/determinante%20mundo6.JPG"></p>
+  <p>Deve-se pegar o oposto dos produtos das diagonais secundárias e somar com os produtos das diagonais principais.</p>
+  <p>Det B = – (0 + 40 + 0) –15 + 0 – 4 = – 40 – 19 = – 59</p>
+  <p>Essa regra utilizada no cálculo do determinante de matriz de ordem 3 é chamada de Regra de Sarrus.</p>
+
+  <img src="matriz.gif">
+  <div>
+<pre><code class="hljs portugol">
+<h3>Exemplo de Matriz Diagonal Principal & Secundária</h3>
+programa
+{
+	funcao inicio()
+	{
+		const inteiro n=4
+		
+		inteiro matriz[n][n]
+
+		para(inteiro l=0;l< n;l++){
+			para(inteiro c=0;c< n;c++){
+				leia(matriz[l][c])
+			}
+		}
+		para(inteiro l=0;l< n;l++){
+			para(inteiro c=0;c< n;c++){
+				se(l==c){
+					matriz[l][c]=1
+				}
+				senao se(c==n-l-1){
+					matriz[l][c]=2
+				}senao{
+					matriz[l][c]=3
+				}
+			}
+		}
+		para(inteiro l=0;l< n;l++){
+			para(inteiro c=0;c< n;c++){
+				escreva(matriz[l][c], " ")
+			}
+			escreva("\n")
+		}	
+	}
+}
+</code></pre>
+<div>
+	<h3>Exemplo com vídeo</h3>
+	<iframe class="video" width="400" height="200" src="https://www.youtube.com/embed/sm5LVQib9f8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<iframe class="video2" width="400" height="200" src="https://www.youtube.com/embed/8R9qu0Vw4oU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<button class="accordion">Bubble Sort</button>
+<div class="panel">
+<h3>Bubble Sort</h3>
+<p>Um dos algoritmos mais simples</p>
+<p>que existem</p>
+<p>• Algoritmo:</p>
+<p>o Percorra o vetor inteiro comparando</p>
+<p>elementos adjacentes (dois a dois)</p>
+<p>o Troque as posições dos elements se</p>
+<p>eles estiverem fora de ordem</p>
+<p>o Repita os dois passos acima com os</p>
+<p>primeiros n-1 itens, depois com os</p>
+<p>primeiros n-2 itens, até que reste</p>
+<p>apenas um item </p>
+<img  src="sort.gif">
+<div>
+<pre><code class="hljs portugol">
+<h3>Exemplo do Bubblesort(Ordenação Bolha)</h3>
+	programa
+{
+	funcao inicio()
+	{
+		inteiro vetor[] ={5,3,-2,-5,3,-10}
+		inteiro n = 6  
+		
+		logico trocou = verdadeiro
+		enquanto(trocou){
+			trocou = falso
+			   para(inteiro i = 0; i < n-1; i ++){
+				   //Se o elemento atual for maior que o proximo troca
+				   se(vetor[i] > vetor[i+1]){
+					inteiro auxiliar = vetor[i]
+					vetor[i] = vetor[i+1]
+					vetor[i+1] = auxiliar
+					trocou = verdadeiro					
+				}
+			}
+			escreva("Vetor final: ")
+			para(inteiro i = 0; i < n; i++){
+				escreva(vetor[i]," ")
+			}
+			escreva("\n")
+		}
+	}
+}
+
+</code></pre>
+</div>
+<div>
+<h3>Exemplo com vídeo</h3>
+	<iframe class="video" width="400" height="200" src="https://www.youtube.com/embed/usAXkpDHcpI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	<iframe class="video2" width="400" height="200" src="https://www.youtube.com/embed/lyZQPjUT5B4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+</div>
+<button class="accordion">Portugol Studio</button>
+<div class="panel">
+  <h1>PORTUGOL STUDIO</h1>
+	<div class="container">
+	<h3 class="font">Para download click aqui!</h3>
+	  <img src="logo.png" alt="Snow" style="width:30%">
+	<a href="http://lite.acad.univali.br/portugol/"><button class="btn">Download</button></a>  
+	</div>
+	<br><br><br>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+</script>
+
+<footer class="rodape" class="footer navbar-fixed-bottom">
+  		Copyright © 2018 Multidisciplinar<article>
+</body>
+</html>
